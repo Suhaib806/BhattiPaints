@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Moderat";
+  src: local("Moderat"),
+       local("Moderat-Regular"),
+       local("Moderat Regular"),
+       url("/fonts/Moderat-Regular.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/0c3856a335fdfdb8b0652f7c3d367fdd.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Moderat";
+  src: local("Moderat Medium"),
+       local("Moderat-Medium"),
+       url("/fonts/Moderat-Medium.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/0c3856a335fdfdb8b0652f7c3d367fdd.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Moderat";
+  src: local("Moderat Bold"),
+       local("Moderat-Bold"),
+       url("/fonts/Moderat-Bold.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/0c3856a335fdfdb8b0652f7c3d367fdd.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-moderat: "Moderat", "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Moderat", "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Moderat", "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "Moderat Mono", "Moderat", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  font-family: "Moderat", var(--font-moderat), sans-serif;
+  font-size: 16px;
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 3400px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply w-full max-w-[1800px] 3xl:max-w-[2360px] 4xl:max-w-[3360px] mx-auto px-5 sm:px-8 lg:px-14 3xl:px-20 4xl:px-28;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea {
+  font-family: "Moderat", var(--font-moderat), sans-serif;
+}
+
+body {
+  background-color: #FAF8F5;
+  color: #161514;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
