@@ -154,18 +154,20 @@ export default function LegacySection() {
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-stretch h-full">
               {/* Dominant High-Quality Architectural Interior Photograph (8 Columns) */}
               <motion.div
-                initial={{ clipPath: "inset(0 0 100% 0)" }}
-                whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 1.05, ease: [0.19, 1, 0.22, 1] }}
-                className="sm:col-span-8 relative overflow-hidden bg-[#EAE3D7] min-h-[380px] sm:min-h-[540px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.85, ease: [0.19, 1, 0.22, 1] }}
+                className="sm:col-span-8 relative overflow-hidden bg-[#EAE3D7] w-full h-[380px] sm:h-auto sm:min-h-[540px]"
               >
                 <motion.img
                   style={{ y: imageY }}
                   src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
                   alt="Contemporary living room with warm painted walls"
-                  loading="lazy"
-                  className="w-full h-[106%] object-cover object-center"
+                  decoding="async"
+                  className="
+                    absolute -top-[3%] left-0 w-full h-[106%] object-cover object-center
+                  "
                 />
               </motion.div>
 
@@ -173,21 +175,21 @@ export default function LegacySection() {
               <div className="sm:col-span-4 flex flex-col justify-between gap-5 sm:gap-6">
                 {/* Close-Up Photograph of Real Brushwork & Paint Texture */}
                 <motion.div
-                  initial={{ clipPath: "inset(100% 0 0 0)" }}
-                  whileInView={{ clipPath: "inset(0% 0 0 0)" }}
-                  viewport={{ once: true, margin: "-60px" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
                   transition={{
-                    duration: 1,
-                    delay: 0.18,
+                    duration: 0.85,
+                    delay: 0.15,
                     ease: [0.19, 1, 0.22, 1],
                   }}
-                  className="relative overflow-hidden bg-[#161514] flex-1 min-h-[240px]"
+                  className="relative overflow-hidden bg-[#161514] w-full h-[260px] sm:h-auto sm:flex-1 sm:min-h-[240px]"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85"
                     alt="Close-up of paint brush applying rich colour to a wall surface"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                 </motion.div>
 
